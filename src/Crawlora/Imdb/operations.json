@@ -1,0 +1,1726 @@
+{
+  "platform": "imdb",
+  "operationCount": 30,
+  "operationIds": [
+    "imdb-charts",
+    "imdb-image-types",
+    "imdb-name",
+    "imdb-name-awards",
+    "imdb-name-credits",
+    "imdb-name-images",
+    "imdb-name-videos",
+    "imdb-search",
+    "imdb-search-title",
+    "imdb-title",
+    "imdb-title-awards",
+    "imdb-title-box-office",
+    "imdb-title-company-credits",
+    "imdb-title-connections",
+    "imdb-title-credits",
+    "imdb-title-episodes",
+    "imdb-title-filming-locations",
+    "imdb-title-goofs",
+    "imdb-title-images",
+    "imdb-title-keywords",
+    "imdb-title-parental-guide",
+    "imdb-title-public-facts-analysis",
+    "imdb-title-quotes",
+    "imdb-title-ratings",
+    "imdb-title-release-info",
+    "imdb-title-reviews",
+    "imdb-title-similar",
+    "imdb-title-technical-specs",
+    "imdb-title-trivia",
+    "imdb-title-videos"
+  ],
+  "methods": {
+    "charts": "imdb-charts",
+    "image_types": "imdb-image-types",
+    "name": "imdb-name",
+    "name_awards": "imdb-name-awards",
+    "name_credits": "imdb-name-credits",
+    "name_images": "imdb-name-images",
+    "name_videos": "imdb-name-videos",
+    "search": "imdb-search",
+    "search_title": "imdb-search-title",
+    "title": "imdb-title",
+    "title_awards": "imdb-title-awards",
+    "title_box_office": "imdb-title-box-office",
+    "title_company_credits": "imdb-title-company-credits",
+    "title_connections": "imdb-title-connections",
+    "title_credits": "imdb-title-credits",
+    "title_episodes": "imdb-title-episodes",
+    "title_filming_locations": "imdb-title-filming-locations",
+    "title_goofs": "imdb-title-goofs",
+    "title_images": "imdb-title-images",
+    "title_keywords": "imdb-title-keywords",
+    "title_parental_guide": "imdb-title-parental-guide",
+    "title_public_facts_analysis": "imdb-title-public-facts-analysis",
+    "title_quotes": "imdb-title-quotes",
+    "title_ratings": "imdb-title-ratings",
+    "title_release_info": "imdb-title-release-info",
+    "title_reviews": "imdb-title-reviews",
+    "title_similar": "imdb-title-similar",
+    "title_technical_specs": "imdb-title-technical-specs",
+    "title_trivia": "imdb-title-trivia",
+    "title_videos": "imdb-title-videos"
+  },
+  "operations": {
+    "imdb-charts": {
+      "id": "imdb-charts",
+      "method": "GET",
+      "path": "/imdb/charts",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "chart",
+          "in": "query",
+          "type": "string",
+          "enum": [
+            "top_rated_movies",
+            "top_rated_tv_shows",
+            "most_popular_movies",
+            "most_popular_tv_shows",
+            "top_rated_english_movies",
+            "lowest_rated_movies"
+          ]
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "type": "integer"
+        }
+      ],
+      "params": [
+        {
+          "default": "top_rated_movies",
+          "description": "IMDb chart",
+          "enum": [
+            "top_rated_movies",
+            "top_rated_tv_shows",
+            "most_popular_movies",
+            "most_popular_tv_shows",
+            "top_rated_english_movies",
+            "lowest_rated_movies"
+          ],
+          "in": "query",
+          "name": "chart",
+          "type": "string"
+        },
+        {
+          "default": 25,
+          "description": "Rows to return, default 25, max 250",
+          "in": "query",
+          "name": "limit",
+          "type": "integer"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-image-types": {
+      "id": "imdb-image-types",
+      "method": "GET",
+      "path": "/imdb/image-types",
+      "pathParams": [],
+      "queryParams": [],
+      "params": [],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-name": {
+      "id": "imdb-name",
+      "method": "GET",
+      "path": "/imdb/name",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "url",
+          "in": "query",
+          "type": "string"
+        }
+      ],
+      "params": [
+        {
+          "description": "IMDb name id",
+          "in": "query",
+          "name": "id",
+          "type": "string",
+          "x-example": "nm0634240"
+        },
+        {
+          "description": "Absolute https://www.imdb.com/name/<id>/ URL",
+          "in": "query",
+          "name": "url",
+          "type": "string",
+          "x-example": "https://www.imdb.com/name/nm0634240/"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-name-awards": {
+      "id": "imdb-name-awards",
+      "method": "GET",
+      "path": "/imdb/name/awards",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "url",
+          "in": "query",
+          "type": "string"
+        }
+      ],
+      "params": [
+        {
+          "description": "IMDb name id",
+          "in": "query",
+          "name": "id",
+          "type": "string",
+          "x-example": "nm0634240"
+        },
+        {
+          "description": "Absolute https://www.imdb.com/name/<id>/ URL",
+          "in": "query",
+          "name": "url",
+          "type": "string",
+          "x-example": "https://www.imdb.com/name/nm0634240/"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-name-credits": {
+      "id": "imdb-name-credits",
+      "method": "GET",
+      "path": "/imdb/name/credits",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "url",
+          "in": "query",
+          "type": "string"
+        }
+      ],
+      "params": [
+        {
+          "description": "IMDb name id",
+          "in": "query",
+          "name": "id",
+          "type": "string",
+          "x-example": "nm0634240"
+        },
+        {
+          "description": "Absolute https://www.imdb.com/name/<id>/ URL",
+          "in": "query",
+          "name": "url",
+          "type": "string",
+          "x-example": "https://www.imdb.com/name/nm0634240/"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-name-images": {
+      "id": "imdb-name-images",
+      "method": "GET",
+      "path": "/imdb/name/images",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "url",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "type",
+          "in": "query",
+          "type": "string",
+          "enum": [
+            "behind_the_scenes",
+            "event",
+            "poster",
+            "product",
+            "production_art",
+            "publicity",
+            "still_frame",
+            "unknown"
+          ]
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "type": "integer"
+        }
+      ],
+      "params": [
+        {
+          "description": "IMDb name id",
+          "in": "query",
+          "name": "id",
+          "type": "string",
+          "x-example": "nm0000151"
+        },
+        {
+          "description": "Absolute https://www.imdb.com/name/<id>/ URL",
+          "in": "query",
+          "name": "url",
+          "type": "string",
+          "x-example": "https://www.imdb.com/name/nm0000151/"
+        },
+        {
+          "description": "Image type filter, single value or comma-separated list",
+          "enum": [
+            "behind_the_scenes",
+            "event",
+            "poster",
+            "product",
+            "production_art",
+            "publicity",
+            "still_frame",
+            "unknown"
+          ],
+          "in": "query",
+          "name": "type",
+          "type": "string",
+          "x-example": "still_frame"
+        },
+        {
+          "description": "Rows to return, default 50, max 1000",
+          "in": "query",
+          "name": "limit",
+          "type": "integer",
+          "x-example": 50
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-name-videos": {
+      "id": "imdb-name-videos",
+      "method": "GET",
+      "path": "/imdb/name/videos",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "url",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "type": "integer"
+        }
+      ],
+      "params": [
+        {
+          "description": "IMDb name id",
+          "in": "query",
+          "name": "id",
+          "type": "string",
+          "x-example": "nm0000151"
+        },
+        {
+          "description": "Absolute https://www.imdb.com/name/<id>/ URL",
+          "in": "query",
+          "name": "url",
+          "type": "string",
+          "x-example": "https://www.imdb.com/name/nm0000151/"
+        },
+        {
+          "description": "Rows to return, default 50, max 100",
+          "in": "query",
+          "name": "limit",
+          "type": "integer",
+          "x-example": 50
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-search": {
+      "id": "imdb-search",
+      "method": "GET",
+      "path": "/imdb/search",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "query",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "type": "integer"
+        }
+      ],
+      "params": [
+        {
+          "description": "Search query",
+          "in": "query",
+          "name": "query",
+          "required": true,
+          "type": "string",
+          "x-example": "inception"
+        },
+        {
+          "description": "Rows to return, default 10, max 20",
+          "in": "query",
+          "name": "limit",
+          "type": "integer",
+          "x-example": 10
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-search-title": {
+      "id": "imdb-search-title",
+      "method": "GET",
+      "path": "/imdb/search/title",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "title",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "title_type",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "genres",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "release_date_from",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "release_date_to",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "min_user_rating",
+          "in": "query",
+          "type": "number"
+        },
+        {
+          "name": "max_user_rating",
+          "in": "query",
+          "type": "number"
+        },
+        {
+          "name": "min_votes",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "max_votes",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "min_popularity",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "max_popularity",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "min_runtime",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "max_runtime",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "groups",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "keywords",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "companies",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "certificates",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "colors",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "countries",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "languages",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "sound_mixes",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "role",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "characters",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "plot",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "include_adult",
+          "in": "query",
+          "type": "boolean"
+        },
+        {
+          "name": "sort",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "sort_order",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "type": "integer"
+        }
+      ],
+      "params": [
+        {
+          "description": "Title-name substring match",
+          "in": "query",
+          "name": "title",
+          "type": "string",
+          "x-example": "matrix"
+        },
+        {
+          "description": "Comma-separated title types: `feature`, `tvSeries`, `short`, `tvEpisode`, `tvMiniSeries`, `tvMovie`, `tvSpecial`, `tvShort`, `videoGame`, `video`, `musicVideo`, `podcastSeries`, `podcastEpisode`",
+          "in": "query",
+          "name": "title_type",
+          "type": "string",
+          "x-example": "feature"
+        },
+        {
+          "description": "Comma-separated genres (include-only): `Action`, `Adventure`, `Animation`, `Biography`, `Comedy`, `Crime`, `Documentary`, `Drama`, `Family`, `Fantasy`, `Film-Noir`, `Game-Show`, `History`, `Horror`, `Music`, `Musical`, `Mystery`, `News`, `Reality-TV`, `Romance`, `Sci-Fi`, `Short`, `Sport`, `Talk-Show`, `Thriller`, `War`, `Western`",
+          "in": "query",
+          "name": "genres",
+          "type": "string",
+          "x-example": "Action,Adventure"
+        },
+        {
+          "description": "Release date lower bound: YYYY, YYYY-MM, or YYYY-MM-DD",
+          "in": "query",
+          "name": "release_date_from",
+          "type": "string",
+          "x-example": "2020-01-01"
+        },
+        {
+          "description": "Release date upper bound: YYYY, YYYY-MM, or YYYY-MM-DD",
+          "in": "query",
+          "name": "release_date_to",
+          "type": "string",
+          "x-example": "2021-12-31"
+        },
+        {
+          "description": "Minimum IMDb user rating, 0-10",
+          "in": "query",
+          "name": "min_user_rating",
+          "type": "number",
+          "x-example": 7
+        },
+        {
+          "description": "Maximum IMDb user rating, 0-10",
+          "in": "query",
+          "name": "max_user_rating",
+          "type": "number",
+          "x-example": 9.5
+        },
+        {
+          "description": "Minimum number of user rating votes",
+          "in": "query",
+          "name": "min_votes",
+          "type": "integer",
+          "x-example": 25000
+        },
+        {
+          "description": "Maximum number of user rating votes",
+          "in": "query",
+          "name": "max_votes",
+          "type": "integer"
+        },
+        {
+          "description": "Minimum IMDb popularity rank (1 is most popular)",
+          "in": "query",
+          "name": "min_popularity",
+          "type": "integer"
+        },
+        {
+          "description": "Maximum IMDb popularity rank",
+          "in": "query",
+          "name": "max_popularity",
+          "type": "integer"
+        },
+        {
+          "description": "Minimum runtime in minutes",
+          "in": "query",
+          "name": "min_runtime",
+          "type": "integer"
+        },
+        {
+          "description": "Maximum runtime in minutes",
+          "in": "query",
+          "name": "max_runtime",
+          "type": "integer"
+        },
+        {
+          "description": "Comma-separated awards/curated-list groups: `oscar_winner`, `oscar_nominee`, `emmy_winner`, `emmy_nominee`, `golden_globe_winner`, `golden_globe_nominee`, `best_picture_winner`, `best_director_winner`, `razzie_winner`, `razzie_nominee`, `top_100`, `top_250`, `top_1000`, `bottom_100`, `bottom_250`, `bottom_1000`",
+          "in": "query",
+          "name": "groups",
+          "type": "string"
+        },
+        {
+          "description": "Comma-separated plot keywords",
+          "in": "query",
+          "name": "keywords",
+          "type": "string",
+          "x-example": "superhero"
+        },
+        {
+          "description": "Comma-separated IMDb company ids, format `co########`",
+          "in": "query",
+          "name": "companies",
+          "type": "string",
+          "x-example": "co0000756"
+        },
+        {
+          "description": "Comma-separated `COUNTRY:RATING` certificate pairs, e.g. `US:PG-13`",
+          "in": "query",
+          "name": "certificates",
+          "type": "string",
+          "x-example": "US:PG-13"
+        },
+        {
+          "description": "Comma-separated color info: `color`, `black_and_white`, `colorized`, `aces`",
+          "in": "query",
+          "name": "colors",
+          "type": "string"
+        },
+        {
+          "description": "Comma-separated ISO country codes",
+          "in": "query",
+          "name": "countries",
+          "type": "string",
+          "x-example": "US"
+        },
+        {
+          "description": "Comma-separated ISO language codes",
+          "in": "query",
+          "name": "languages",
+          "type": "string",
+          "x-example": "en"
+        },
+        {
+          "description": "Comma-separated sound mix names: `12-Track Digital Sound`, `3 Channel Stereo`, `4-Track Stereo`, `6-Track Stereo`, `70 mm 6-Track`, `AGA Sound System`, `Auro 11.1`, `CDS`, `Chronophone`, `Cinematophone`, `Cinephone`, `Cinerama 7-Track`, `Cinesound`, `D-Cinema 48kHz 5.1`, `Datasat`, `De Forest Phonofilm`, `Digitrac Digital Audio System`, `Dolby`, `Dolby Atmos`, `Dolby Digital`, `Dolby Digital EX`, `Dolby SR`, `Dolby Stereo`, `Dolby Surround 7.1`, `DTS`, `DTS 70 mm`, `DTS Stereo`, `DTS-ES`, `IMAX 6-Track`, `Kinoplasticon`, `LC-Concept Digital Sound`, `Matrix Surround`, `Mono`, `Perspecta Stereo`, `Phono-Kinema`, `SDDS`, `Sensurround`, `Silent`, `Sonics-DDP`, `Sonix`, `Stereo`, `Ultra Stereo`, `Vitaphone`",
+          "in": "query",
+          "name": "sound_mixes",
+          "type": "string"
+        },
+        {
+          "description": "Comma-separated cast/crew IMDb name ids, format `nm########`",
+          "in": "query",
+          "name": "role",
+          "type": "string",
+          "x-example": "nm0634240"
+        },
+        {
+          "description": "Comma-separated character names",
+          "in": "query",
+          "name": "characters",
+          "type": "string",
+          "x-example": "Neo"
+        },
+        {
+          "description": "Plot text search term",
+          "in": "query",
+          "name": "plot",
+          "type": "string",
+          "x-example": "hacker"
+        },
+        {
+          "default": false,
+          "description": "Include adult titles. Defaults to excluded",
+          "in": "query",
+          "name": "include_adult",
+          "type": "boolean"
+        },
+        {
+          "description": "One of `moviemeter`, `alpha`, `user_rating`, `num_votes`, `boxoffice_gross_us`, `runtime`, `year`, `release_date`",
+          "in": "query",
+          "name": "sort",
+          "type": "string",
+          "x-example": "user_rating"
+        },
+        {
+          "description": "`asc` or `desc`. Defaults to `asc` when sort is set",
+          "in": "query",
+          "name": "sort_order",
+          "type": "string",
+          "x-example": "desc"
+        },
+        {
+          "description": "Rows to return, default 25, max 50",
+          "in": "query",
+          "name": "limit",
+          "type": "integer",
+          "x-example": 25
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-title": {
+      "id": "imdb-title",
+      "method": "GET",
+      "path": "/imdb/title",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "url",
+          "in": "query",
+          "type": "string"
+        }
+      ],
+      "params": [
+        {
+          "description": "IMDb title id",
+          "in": "query",
+          "name": "id",
+          "type": "string",
+          "x-example": "tt1375666"
+        },
+        {
+          "description": "Absolute https://www.imdb.com/title/<id>/ URL",
+          "in": "query",
+          "name": "url",
+          "type": "string",
+          "x-example": "https://www.imdb.com/title/tt1375666/"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-title-awards": {
+      "id": "imdb-title-awards",
+      "method": "GET",
+      "path": "/imdb/title/awards",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "url",
+          "in": "query",
+          "type": "string"
+        }
+      ],
+      "params": [
+        {
+          "description": "IMDb title id",
+          "in": "query",
+          "name": "id",
+          "type": "string",
+          "x-example": "tt1375666"
+        },
+        {
+          "description": "Absolute https://www.imdb.com/title/<id>/ URL",
+          "in": "query",
+          "name": "url",
+          "type": "string",
+          "x-example": "https://www.imdb.com/title/tt1375666/"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-title-box-office": {
+      "id": "imdb-title-box-office",
+      "method": "GET",
+      "path": "/imdb/title/box-office",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "url",
+          "in": "query",
+          "type": "string"
+        }
+      ],
+      "params": [
+        {
+          "description": "IMDb title id",
+          "in": "query",
+          "name": "id",
+          "type": "string",
+          "x-example": "tt0111161"
+        },
+        {
+          "description": "Absolute https://www.imdb.com/title/<id>/ URL",
+          "in": "query",
+          "name": "url",
+          "type": "string",
+          "x-example": "https://www.imdb.com/title/tt0111161/"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-title-company-credits": {
+      "id": "imdb-title-company-credits",
+      "method": "GET",
+      "path": "/imdb/title/company-credits",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "url",
+          "in": "query",
+          "type": "string"
+        }
+      ],
+      "params": [
+        {
+          "description": "IMDb title id",
+          "in": "query",
+          "name": "id",
+          "type": "string",
+          "x-example": "tt1375666"
+        },
+        {
+          "description": "Absolute https://www.imdb.com/title/<id>/ URL",
+          "in": "query",
+          "name": "url",
+          "type": "string",
+          "x-example": "https://www.imdb.com/title/tt1375666/"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-title-connections": {
+      "id": "imdb-title-connections",
+      "method": "GET",
+      "path": "/imdb/title/connections",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "url",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "type": "integer"
+        }
+      ],
+      "params": [
+        {
+          "description": "IMDb title id",
+          "in": "query",
+          "name": "id",
+          "type": "string",
+          "x-example": "tt0111161"
+        },
+        {
+          "description": "Absolute https://www.imdb.com/title/<id>/ URL",
+          "in": "query",
+          "name": "url",
+          "type": "string",
+          "x-example": "https://www.imdb.com/title/tt0111161/"
+        },
+        {
+          "description": "Rows to return, default 50, max 250",
+          "in": "query",
+          "name": "limit",
+          "type": "integer",
+          "x-example": 50
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-title-credits": {
+      "id": "imdb-title-credits",
+      "method": "GET",
+      "path": "/imdb/title/credits",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "url",
+          "in": "query",
+          "type": "string"
+        }
+      ],
+      "params": [
+        {
+          "description": "IMDb title id",
+          "in": "query",
+          "name": "id",
+          "type": "string",
+          "x-example": "tt1375666"
+        },
+        {
+          "description": "Absolute https://www.imdb.com/title/<id>/ URL",
+          "in": "query",
+          "name": "url",
+          "type": "string",
+          "x-example": "https://www.imdb.com/title/tt1375666/"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-title-episodes": {
+      "id": "imdb-title-episodes",
+      "method": "GET",
+      "path": "/imdb/title/episodes",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "url",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "season",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "type": "integer"
+        }
+      ],
+      "params": [
+        {
+          "description": "IMDb title id",
+          "in": "query",
+          "name": "id",
+          "type": "string",
+          "x-example": "tt0944947"
+        },
+        {
+          "description": "Absolute https://www.imdb.com/title/<id>/ URL",
+          "in": "query",
+          "name": "url",
+          "type": "string",
+          "x-example": "https://www.imdb.com/title/tt0944947/"
+        },
+        {
+          "description": "Season number to request",
+          "in": "query",
+          "name": "season",
+          "type": "integer",
+          "x-example": 1
+        },
+        {
+          "description": "Rows to return, default 10, max 20",
+          "in": "query",
+          "name": "limit",
+          "type": "integer",
+          "x-example": 10
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-title-filming-locations": {
+      "id": "imdb-title-filming-locations",
+      "method": "GET",
+      "path": "/imdb/title/filming-locations",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "url",
+          "in": "query",
+          "type": "string"
+        }
+      ],
+      "params": [
+        {
+          "description": "IMDb title id",
+          "in": "query",
+          "name": "id",
+          "type": "string",
+          "x-example": "tt1375666"
+        },
+        {
+          "description": "Absolute https://www.imdb.com/title/<id>/ URL",
+          "in": "query",
+          "name": "url",
+          "type": "string",
+          "x-example": "https://www.imdb.com/title/tt1375666/"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-title-goofs": {
+      "id": "imdb-title-goofs",
+      "method": "GET",
+      "path": "/imdb/title/goofs",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "url",
+          "in": "query",
+          "type": "string"
+        }
+      ],
+      "params": [
+        {
+          "description": "IMDb title id",
+          "in": "query",
+          "name": "id",
+          "type": "string",
+          "x-example": "tt1375666"
+        },
+        {
+          "description": "Absolute https://www.imdb.com/title/<id>/ URL",
+          "in": "query",
+          "name": "url",
+          "type": "string",
+          "x-example": "https://www.imdb.com/title/tt1375666/"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-title-images": {
+      "id": "imdb-title-images",
+      "method": "GET",
+      "path": "/imdb/title/images",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "url",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "type",
+          "in": "query",
+          "type": "string",
+          "enum": [
+            "behind_the_scenes",
+            "event",
+            "poster",
+            "product",
+            "production_art",
+            "publicity",
+            "still_frame",
+            "unknown"
+          ]
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "type": "integer"
+        }
+      ],
+      "params": [
+        {
+          "description": "IMDb title id",
+          "in": "query",
+          "name": "id",
+          "type": "string",
+          "x-example": "tt0089753"
+        },
+        {
+          "description": "Absolute https://www.imdb.com/title/<id>/ URL",
+          "in": "query",
+          "name": "url",
+          "type": "string",
+          "x-example": "https://www.imdb.com/title/tt0089753/"
+        },
+        {
+          "description": "Image type filter, single value or comma-separated list",
+          "enum": [
+            "behind_the_scenes",
+            "event",
+            "poster",
+            "product",
+            "production_art",
+            "publicity",
+            "still_frame",
+            "unknown"
+          ],
+          "in": "query",
+          "name": "type",
+          "type": "string",
+          "x-example": "still_frame"
+        },
+        {
+          "description": "Rows to return, default 50, max 1000",
+          "in": "query",
+          "name": "limit",
+          "type": "integer",
+          "x-example": 50
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-title-keywords": {
+      "id": "imdb-title-keywords",
+      "method": "GET",
+      "path": "/imdb/title/keywords",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "url",
+          "in": "query",
+          "type": "string"
+        }
+      ],
+      "params": [
+        {
+          "description": "IMDb title id",
+          "in": "query",
+          "name": "id",
+          "type": "string",
+          "x-example": "tt1375666"
+        },
+        {
+          "description": "Absolute https://www.imdb.com/title/<id>/ URL",
+          "in": "query",
+          "name": "url",
+          "type": "string",
+          "x-example": "https://www.imdb.com/title/tt1375666/"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-title-parental-guide": {
+      "id": "imdb-title-parental-guide",
+      "method": "GET",
+      "path": "/imdb/title/parental-guide",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "url",
+          "in": "query",
+          "type": "string"
+        }
+      ],
+      "params": [
+        {
+          "description": "IMDb title id",
+          "in": "query",
+          "name": "id",
+          "type": "string",
+          "x-example": "tt1375666"
+        },
+        {
+          "description": "Absolute https://www.imdb.com/title/<id>/ URL",
+          "in": "query",
+          "name": "url",
+          "type": "string",
+          "x-example": "https://www.imdb.com/title/tt1375666/"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-title-public-facts-analysis": {
+      "id": "imdb-title-public-facts-analysis",
+      "method": "GET",
+      "path": "/imdb/title/public-facts-analysis",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "url",
+          "in": "query",
+          "type": "string"
+        }
+      ],
+      "params": [
+        {
+          "description": "IMDb title id",
+          "in": "query",
+          "name": "id",
+          "type": "string",
+          "x-example": "tt1375666"
+        },
+        {
+          "description": "Absolute https://www.imdb.com/title/<id>/ URL",
+          "in": "query",
+          "name": "url",
+          "type": "string",
+          "x-example": "https://www.imdb.com/title/tt1375666/"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-title-quotes": {
+      "id": "imdb-title-quotes",
+      "method": "GET",
+      "path": "/imdb/title/quotes",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "url",
+          "in": "query",
+          "type": "string"
+        }
+      ],
+      "params": [
+        {
+          "description": "IMDb title id",
+          "in": "query",
+          "name": "id",
+          "type": "string",
+          "x-example": "tt1375666"
+        },
+        {
+          "description": "Absolute https://www.imdb.com/title/<id>/ URL",
+          "in": "query",
+          "name": "url",
+          "type": "string",
+          "x-example": "https://www.imdb.com/title/tt1375666/"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-title-ratings": {
+      "id": "imdb-title-ratings",
+      "method": "GET",
+      "path": "/imdb/title/ratings",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "url",
+          "in": "query",
+          "type": "string"
+        }
+      ],
+      "params": [
+        {
+          "description": "IMDb title id",
+          "in": "query",
+          "name": "id",
+          "type": "string",
+          "x-example": "tt0111161"
+        },
+        {
+          "description": "Absolute IMDb title URL",
+          "in": "query",
+          "name": "url",
+          "type": "string",
+          "x-example": "https://www.imdb.com/title/tt0111161/"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-title-release-info": {
+      "id": "imdb-title-release-info",
+      "method": "GET",
+      "path": "/imdb/title/release-info",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "url",
+          "in": "query",
+          "type": "string"
+        }
+      ],
+      "params": [
+        {
+          "description": "IMDb title id",
+          "in": "query",
+          "name": "id",
+          "type": "string",
+          "x-example": "tt1375666"
+        },
+        {
+          "description": "Absolute https://www.imdb.com/title/<id>/ URL",
+          "in": "query",
+          "name": "url",
+          "type": "string",
+          "x-example": "https://www.imdb.com/title/tt1375666/"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-title-reviews": {
+      "id": "imdb-title-reviews",
+      "method": "GET",
+      "path": "/imdb/title/reviews",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "url",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "type": "integer"
+        }
+      ],
+      "params": [
+        {
+          "description": "IMDb title id",
+          "in": "query",
+          "name": "id",
+          "type": "string",
+          "x-example": "tt1375666"
+        },
+        {
+          "description": "Absolute https://www.imdb.com/title/<id>/ URL",
+          "in": "query",
+          "name": "url",
+          "type": "string",
+          "x-example": "https://www.imdb.com/title/tt1375666/"
+        },
+        {
+          "description": "Rows to return, default 10, max 20",
+          "in": "query",
+          "name": "limit",
+          "type": "integer",
+          "x-example": 10
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-title-similar": {
+      "id": "imdb-title-similar",
+      "method": "GET",
+      "path": "/imdb/title/similar",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "url",
+          "in": "query",
+          "type": "string"
+        }
+      ],
+      "params": [
+        {
+          "description": "IMDb title id",
+          "in": "query",
+          "name": "id",
+          "type": "string",
+          "x-example": "tt0111161"
+        },
+        {
+          "description": "Absolute IMDb title URL",
+          "in": "query",
+          "name": "url",
+          "type": "string",
+          "x-example": "https://www.imdb.com/title/tt0111161/"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-title-technical-specs": {
+      "id": "imdb-title-technical-specs",
+      "method": "GET",
+      "path": "/imdb/title/technical-specs",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "url",
+          "in": "query",
+          "type": "string"
+        }
+      ],
+      "params": [
+        {
+          "description": "IMDb title id",
+          "in": "query",
+          "name": "id",
+          "type": "string",
+          "x-example": "tt1375666"
+        },
+        {
+          "description": "Absolute https://www.imdb.com/title/<id>/ URL",
+          "in": "query",
+          "name": "url",
+          "type": "string",
+          "x-example": "https://www.imdb.com/title/tt1375666/"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-title-trivia": {
+      "id": "imdb-title-trivia",
+      "method": "GET",
+      "path": "/imdb/title/trivia",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "url",
+          "in": "query",
+          "type": "string"
+        }
+      ],
+      "params": [
+        {
+          "description": "IMDb title id",
+          "in": "query",
+          "name": "id",
+          "type": "string",
+          "x-example": "tt1375666"
+        },
+        {
+          "description": "Absolute https://www.imdb.com/title/<id>/ URL",
+          "in": "query",
+          "name": "url",
+          "type": "string",
+          "x-example": "https://www.imdb.com/title/tt1375666/"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-title-videos": {
+      "id": "imdb-title-videos",
+      "method": "GET",
+      "path": "/imdb/title/videos",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "url",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "type": "integer"
+        }
+      ],
+      "params": [
+        {
+          "description": "IMDb title id",
+          "in": "query",
+          "name": "id",
+          "type": "string",
+          "x-example": "tt1375666"
+        },
+        {
+          "description": "Absolute https://www.imdb.com/title/<id>/ URL",
+          "in": "query",
+          "name": "url",
+          "type": "string",
+          "x-example": "https://www.imdb.com/title/tt1375666/"
+        },
+        {
+          "description": "Rows to return, default 50, max 100",
+          "in": "query",
+          "name": "limit",
+          "type": "integer",
+          "x-example": 50
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    }
+  }
+}
