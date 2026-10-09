@@ -26,7 +26,7 @@ final class Client
     private ?\Closure $transport;
 
     public const PLATFORM = 'imdb';
-    public const VERSION = '0.1.0';
+    public const VERSION = '0.1.1';
     public const OPERATION_COUNT = 30;
     public const OPERATION_IDS = ["imdb-charts", "imdb-image-types", "imdb-name", "imdb-name-awards", "imdb-name-credits", "imdb-name-images", "imdb-name-videos", "imdb-search", "imdb-search-title", "imdb-title", "imdb-title-awards", "imdb-title-box-office", "imdb-title-company-credits", "imdb-title-connections", "imdb-title-credits", "imdb-title-episodes", "imdb-title-filming-locations", "imdb-title-goofs", "imdb-title-images", "imdb-title-keywords", "imdb-title-parental-guide", "imdb-title-public-facts-analysis", "imdb-title-quotes", "imdb-title-ratings", "imdb-title-release-info", "imdb-title-reviews", "imdb-title-similar", "imdb-title-technical-specs", "imdb-title-trivia", "imdb-title-videos"];
 
@@ -56,7 +56,7 @@ JSON, true, 512, JSON_THROW_ON_ERROR);
         $url = $this->buildUrl($operation, $params);
         $headers = [
             'x-api-key: ' . $this->apiKey,
-            'User-Agent: crawlora-imdb-php/0.1.0',
+            'User-Agent: crawlora-imdb-php/0.1.1',
             'Accept: ' . (in_array('text/plain', $operation['produces'], true) ? 'application/json, text/plain' : 'application/json'),
         ];
         try {
